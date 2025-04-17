@@ -171,7 +171,7 @@ with tab1:
                             message_sent = True
                         log_detection(label_clean, 100.0, distance, source="video")
             img_resized = cv2.resize(img_pred_rgb, (display_width, display_height))
-            video_placeholder.image(img_resized, caption='🔍 Frame Prediction', use_column_width=True)
+            video_placeholder.image(img_resized, caption='🔍 Frame Prediction', use_container_width=True)
             if new_alert:
                 message_placeholder.success(new_alert)
             time.sleep(delay)
@@ -203,7 +203,7 @@ with tab2:
                     send_sms(RECIPIENT_PHONE_NUMBER, f"🚨 Emergency Vehicle Detected! Distance: {distance:.2f} meters")
                     message_sent = True
                 log_detection(label_clean, 100.0, distance, source="image")
-        st.image(img_rgb, caption="🖼 Detected Image", use_column_width=True)
+        st.image(img_rgb, caption="🖼 Detected Image", use_container_width=True)
 
 # === Sidebar Info ===
 st.sidebar.title("ℹ About")
