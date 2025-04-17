@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 # === Initialize YOLO ===
-yolo = YOLO_Pred('hell/weights/best.onnx', 'data.yaml')
+yolo = YOLO_Pred('predictions/hell/weights/best.onnx', 'predictions/data.yaml')
 
 # === Twilio Configuration ===
 TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
