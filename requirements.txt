@@ -4,4 +4,9 @@ numpy
 pyyaml
 setuptools
 twilio
+streamlit
+psycopg2-binary
+numpy
+twilio
+# any other dependencies
 
