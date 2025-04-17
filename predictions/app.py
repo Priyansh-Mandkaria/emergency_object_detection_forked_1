@@ -10,16 +10,16 @@ from twilio.rest import Client
 from dotenv import load_dotenv
 
 # Load the .env file in the same folder
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+#(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 # === Initialize YOLO ===
 yolo = YOLO_Pred('predictions/hell/weights/best.onnx', 'predictions/data.yaml')
 
 # === Twilio Configuration ===
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
-TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")  
-RECIPIENT_PHONE_NUMBER = os.getenv("RECIPIENT_PHONE_NUMBER")
+TWILIO_ACCOUNT_SID = 'AC32ba2e1cc6874969ec6c6687b9937900'
+TWILIO_AUTH_TOKEN = 'ec1f85b3033145a4312cbf3be075047c'
+TWILIO_PHONE_NUMBER = '+17152266011' 
+RECIPIENT_PHONE_NUMBER = '+916206920880'
 
 # === PostgreSQL Setup ===
 DB_URL = 'postgresql://nitin_user:mxigVvzicOhcat6mGn5ltTHk7062VnJt@dpg-cvshe2i4d50c738h9a30-a.oregon-postgres.render.com/nitin'
