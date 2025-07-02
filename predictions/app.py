@@ -22,37 +22,37 @@ TWILIO_PHONE_NUMBER = '+17152266011'
 RECIPIENT_PHONE_NUMBER = '+916206920880'
 
 # === PostgreSQL Setup ===
-DB_URL = 'postgresql://nitin_user:mxigVvzicOhcat6mGn5ltTHk7062VnJt@dpg-cvshe2i4d50c738h9a30-a.oregon-postgres.render.com/nitin'
+#DB_URL = 'postgresql://nitin_user:mxigVvzicOhcat6mGn5ltTHk7062VnJt@dpg-cvshe2i4d50c738h9a30-a.oregon-postgres.render.com/nitin'
 
-def init_db():
-    conn = psycopg2.connect(DB_URL)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS detections (
-            id SERIAL PRIMARY KEY,
-            timestamp TEXT,
-            label TEXT,
-            confidence REAL,
-            distance_m REAL,
-            source TEXT
-        )
-    ''')
-    conn.commit()
-    cursor.close()
-    conn.close()
+# def init_db():
+#     conn = psycopg2.connect(DB_URL)
+#     cursor = conn.cursor()
+#     cursor.execute('''
+#         CREATE TABLE IF NOT EXISTS detections (
+#             id SERIAL PRIMARY KEY,
+#             timestamp TEXT,
+#             label TEXT,
+#             confidence REAL,
+#             distance_m REAL,
+#             source TEXT
+#         )
+#     ''')
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
 
-def log_detection(label, confidence, distance, source):
-    conn = psycopg2.connect(DB_URL)
-    cursor = conn.cursor()
-    cursor.execute('''
-        INSERT INTO detections (timestamp, label, confidence, distance_m, source)
-        VALUES (%s, %s, %s, %s, %s)
-    ''', (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), label, confidence, round(distance, 2), source))
-    conn.commit()
-    cursor.close()
-    conn.close()
+# def log_detection(label, confidence, distance, source):
+#     conn = psycopg2.connect(DB_URL)
+#     cursor = conn.cursor()
+#     cursor.execute('''
+#         INSERT INTO detections (timestamp, label, confidence, distance_m, source)
+#         VALUES (%s, %s, %s, %s, %s)
+#     ''', (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), label, confidence, round(distance, 2), source))
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
 
-init_db()
+# init_db()
 
 # === Twilio SMS Function ===
 def send_sms(to_phone, message_body):
