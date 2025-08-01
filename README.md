@@ -3,8 +3,8 @@
 **Supervised by:** Dr. Dalia Nandi (Project Mentor), Professor at IIIT Kalyani
 
 **Team Members:**  
-- Priyansh Mandkaria (3rd year - CSE/22066)
 - Nitin Pratap (3rd year - CSE/22061)
+- Priyansh Mandkaria (3rd year - CSE/22066)
 - Prince Kumar (3rd year - CSE/22064)
 - Mrityunjay Kumar (3rd year - CSE/22057)
 
