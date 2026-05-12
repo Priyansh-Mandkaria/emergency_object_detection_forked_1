@@ -14,10 +14,10 @@ from twilio.rest import Client
 yolo  = YOLO_Pred("predictions/hell/weights/best.onnx", "predictions/data.yaml")
 audio = AudioSirenDetector()
 
-# === Twilio Config ===
-TWILIO_SID   = "ACec7842a6b6d4114f4a2846689a288e65"
-TWILIO_TOKEN = "00d63b370560e19df6c6c17504130f7e"
-TWILIO_FROM  = "+12624259641"
+# === Twilio Config (set these as environment variables) ===
+TWILIO_SID   = os.environ.get("TWILIO_ACCOUNT_SID", "")
+TWILIO_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
+TWILIO_FROM  = os.environ.get("TWILIO_PHONE_NUMBER", "+12624259641")
 
 COOLDOWN_SEC = 600  # 10 minutes between SMS to the same number
 
